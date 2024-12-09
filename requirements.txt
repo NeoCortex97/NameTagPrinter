@@ -2,3 +2,4 @@ fastapi~=0.115.6
 spacedirectory~=0.0.5
 pillow~=11.0.0
 brother-ql
+qrcode[pil]
