@@ -10,14 +10,14 @@ import qrcode
 PRINTER_MODEL = models[11]
 LABEL_HEIGHT = label_type_specs['62']['dots_printable'][0]
 SCALING_FACTOR = 2
-font: ImageFont = ImageFont.truetype('../../../backend/assets/fonts/JetBrainsMono.ttf', 200)
+font: ImageFont = ImageFont.truetype('../../../assets/fonts/JetBrainsMono.ttf', 150)
+print(LABEL_HEIGHT)
 
 
-image = Image.new('RGBA', (1200, LABEL_HEIGHT), (255, 255, 255))
-logo = Image.open('../../../backend/assets/images/flipdot.png')
+image = Image.new('RGBA', (LABEL_HEIGHT, 1200), (255, 255, 255))
+logo = Image.open('../../../assets/images/test/flipdot.png')
 logo = logo.resize((int(logo.size[0] / SCALING_FACTOR), int(logo.size[1] / SCALING_FACTOR)))
 logo.convert(mode='RGBA')
-
 
 code: Image = qrcode.make('https://flipdot.org/').get_image()
 
@@ -26,7 +26,7 @@ name_img = Image.new('RGB', font.getbbox(name)[2:], color=(255, 255, 255))
 name_draw = ImageDraw.Draw(name_img)
 name_draw.text((0,0), name, font=font, fill=0)
 
-image.paste(logo, (30, 35), logo)
+image.paste(logo, (30, 33), logo)
 image.paste(code, (image.size[0] - code.size[0], 0))
 image.paste(name_img, (35, LABEL_HEIGHT - (name_img.size[1]  + 100)))
 image.rotate(-90, expand=True)
@@ -48,9 +48,9 @@ instructions = convert(
 
 image.show()
 
-# send(
-#     instructions=instructions,
-#     printer_identifier='tcp://192.168.178.135',
-#     backend_identifier='network',
-#     blocking=True
-# )
+send(
+    instructions=instructions,
+    printer_identifier='tcp://192.168.178.135',
+    backend_identifier='network',
+    blocking=True
+)
