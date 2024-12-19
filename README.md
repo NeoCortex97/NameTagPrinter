@@ -1,5 +1,7 @@
 # NameTagPrinter
 
+**NOTICE:** This is not production software! Security was not a concern when developing and will be implemented if 
+
 This project allows for printing hackerspace themed nametags or badges via cups compatible label printer.
 it is tested with a Brother QL-820NWBc, which is picked up by cups natively.
 
