@@ -34,9 +34,11 @@ Each command can have a different number of parameters. I'll list them here:
   - The `space` parameter is for identifying the hackerspace. it is mainly intended for stats, but can be printed instead of the logo if said logo is empty.
   - The `logo` parameter is the filename of the logo that should be used. I am using the filename, so one could add better logos without causing problems on older jobs.
   - The `url` parameter contains the url ti the hackerspace website. It will be printed as a QR-Code on the tag, but can be blank if none should be printed.
-- `RECEIPT;name;space`
+- `RECEIPT;name;space;logo;url`
   - The `name` parameter is the user's chosen Nickname to be written as text on the Badge
   - The `space` parameter is for identifying the hackerspace. It will be printed on the receipt for reference. It can be left blank `UNKNOWN` will be printed instead.
+  - The `logo` parameter is the filename of the logo that should be used. I am using the filename, so one could add better logos without causing problems on older jobs.
+  - The `url` parameter contains the url ti the hackerspace website. It will be printed as a QR-Code on the tag, but can be blank if none should be printed.
 - `STATS`
   - This command does not have any parameters yet. It will gain a parameter to get statistics of a batch job if batch jobs are properly implemented.
 - `RESET`
