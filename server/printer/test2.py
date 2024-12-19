@@ -13,7 +13,7 @@ PRINTER_NAME = 'Brother_QL_820NWB'
 LABEL_HEIGHT = 696
 SCALING_FACTOR = 2.5
 LOGO_THRESHOLD = 10
-font: ImageFont = ImageFont.truetype('../../../backend/assets/fonts/JetBrainsMono.ttf', 200)
+font: ImageFont = ImageFont.truetype('../../assets/fonts/JetBrainsMono.ttf', 200)
 
 
 image = Image.new('RGBA', (1200, LABEL_HEIGHT), (255, 255, 255))

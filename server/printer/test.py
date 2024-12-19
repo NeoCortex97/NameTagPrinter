@@ -10,12 +10,12 @@ import qrcode
 PRINTER_MODEL = models[11]
 LABEL_HEIGHT = label_type_specs['62']['dots_printable'][0]
 SCALING_FACTOR = 2
-font: ImageFont = ImageFont.truetype('../../../assets/fonts/JetBrainsMono.ttf', 150)
+font: ImageFont = ImageFont.truetype('../../assets/fonts/JetBrainsMono.ttf', 150)
 print(LABEL_HEIGHT)
 
 
 image = Image.new('RGBA', (LABEL_HEIGHT, 1200), (255, 255, 255))
-logo = Image.open('../../../assets/images/test/flipdot.png')
+logo = Image.open('../../assets/images/test/flipdot.png')
 logo = logo.resize((int(logo.size[0] / SCALING_FACTOR), int(logo.size[1] / SCALING_FACTOR)))
 logo.convert(mode='RGBA')
 
