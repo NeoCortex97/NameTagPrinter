@@ -2,9 +2,7 @@ import uuid
 from tempfile import mktemp
 
 import qrcode
-from PIL.Image import Image
 from escpos.printer import Usb
-from pydantic import UUID4
 
 name = 'NeoCortex97'
 space = 'FlipDot'

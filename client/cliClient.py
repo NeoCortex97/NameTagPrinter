@@ -15,6 +15,9 @@ def main():
         print('processing request ...', end='')
         socket.send(f'TAG;{name};{space};{logo};{url}'.encode('utf-8'))
         print(socket.recv().decode('utf-8'))
+        print('Processing receipt ...', end='')
+        socket.send(f'RECEIPT;{name};{space};{logo};{url}'.encode('utf-8'))
+        print(socket.recv().decode('utf-8'))
         print('#' * 80)
 
 

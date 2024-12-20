@@ -1,7 +1,6 @@
 from time import sleep
 
 import zmq
-from zmq.backend.cffi import Socket
 
 from printer.badgeDriver import BadgeDriver
 from printer.receipotDriver import ReceiptDriver
@@ -28,11 +27,8 @@ while True:
         except :
             socket.send(b'FAIL')
     elif command[0].lower() == 'receipt':
-        try:
             receipt_driver.print(command[1], command[2], command[3], command[4])
             socket.send(b'OK')  # Print receipt here
-        except :
-            socket.send(b'FAIL')
     elif command[0].lower() == 'stats':
         sleep(1)
         socket.send(b'OK')  # Print stats here
