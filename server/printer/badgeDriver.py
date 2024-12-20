@@ -15,7 +15,7 @@ LOGO_PATH = pathlib.Path('../assets/images/logos')
 
 class BadgeDriver:
     def __init__(self):
-        self.PRINTER_NAME = 'Brother_QL_820NWB_USB'
+        self.PRINTER_NAME = 'Brother_QL_820NWB'
         self.LABEL_HEIGHT = 696
         self.SCALING_FACTOR = 2.5
         self.LOGO_THRESHOLD = 10
@@ -46,7 +46,7 @@ class BadgeDriver:
         image = Image.new('RGBA', (self.label_width, self.LABEL_HEIGHT), (255, 255, 255))
 
         logo_image = self.process_logo(space, logo)
-        logo_image.show("debug")
+        # logo_image.show("debug")
         image.paste(logo_image, (30, 33), logo_image)
 
         font_size = self.max_font_size

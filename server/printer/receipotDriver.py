@@ -15,7 +15,7 @@ class ReceiptDriver:
         self.printer.textln(f'Space:\t{space}\n')
         self.printer.textln(f'\tName:\t{name}')
 
-        code = qrcode.make(f'TAG;{name};{space};{logo};{url};true')
+        code = qrcode.make(f'{name};{space};{logo};{url};true')
         temppath = mktemp(prefix='code')
         code.save(temppath)
 
