@@ -38,8 +38,7 @@ class BadgeDriver:
             'print-scaling': 'fill',
             'PageSize': 'Custom.62x109mm',
             'MediaType': 'Roll',
-            'CutMedia': 'Auto',
-            'ColorModel': 'AutoGray'
+            'CutMedia': 'Auto'
         })
 
         self.wait_for_jobs()
