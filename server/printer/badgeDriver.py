@@ -37,10 +37,12 @@ class BadgeDriver:
         image.save(outfile, 'png')
 
         job_id = self.conn.printFile(self.PRINTER_NAME, outfile, f'Badge {name}', {
-            'print-scaling': 'fit',
+            'print-scaling': 'fill',
             'PageSize': 'Custom.62x109mm',
             'MediaType': 'Roll',
             'CutMedia': 'Auto',
+            'media': 'custom_62x109mm_62x109mm',
+
         })
 
         print(self.conn.getJobAttributes(job_id))
