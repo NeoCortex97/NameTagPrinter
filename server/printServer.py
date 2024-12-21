@@ -28,14 +28,14 @@ while True:
             badge_driver.print(command[1], command[2], command[3], command[4])
             socket.send(b'OK')
         except cups.IPPError as e:
-            print(e.with_traceback())
+            print(e)
             socket.send(f'FAIL;{e.args}'.encode('utf-8'))
     elif command[0].lower() == 'receipt':
             try:
                 receipt_driver.print(command[1], command[2], command[3], command[4])
                 socket.send(b'OK')  # Print receipt here
             except DeviceNotFoundError as e:
-                print(e.with_traceback())
+                print(e)
                 socket.send(f'FAIL;{e.args}'.encode('utf-8'))
     elif command[0].lower() == 'stats':
         sleep(1)

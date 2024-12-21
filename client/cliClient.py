@@ -4,7 +4,7 @@ def main():
     context = zmq.Context()
     socket = context.socket(zmq.REQ)
     print('connection to socket ...', end='')
-    socket.connect('tcp://127.0.0.1:6660')
+    socket.connect('tcp://192.168.178.122:6660')
     print('OK')
     while True:
         name = input('name: ')
