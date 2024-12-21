@@ -8,7 +8,10 @@ import qrcode
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-from cups import IPPError
+from brother_ql import BrotherQLRaster
+from brother_ql.devicedependent import models
+from brother_ql.backends.helpers import send
+from brother_ql.conversion import convert
 
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent.parent
 ASSET_ROOT = PROJECT_ROOT.joinpath('assets')
@@ -27,9 +30,33 @@ class BadgeDriver:
         self.label_width = 1200
         self.name_margin = 20
 
+        PRINTER_MODEL = models[11]
+
+        self.printer =  BrotherQLRaster(PRINTER_MODEL)
+
     def print(self, name: str, space: str, logo: str, url: str):
 
         image = self.generate_image(name, space, logo, url)
+
+        # instructions = convert(
+        #     qlr=self.printer,
+        #     images=[image],
+        #     label='62',
+        #     rotate='0',  # 'Auto', '0', '90', '270'
+        #     threshold=70.0,  # Black and white threshold in percent.
+        #     dither=False,
+        #     compress=False,
+        #     dpi_600=True,
+        #     hq=True,
+        #     cut=True
+        # )
+        #
+        # send(
+        #     instructions=instructions,
+        #     printer_identifier='tcp://192.168.178.135',
+        #     backend_identifier='network',
+        #     blocking=True
+        # )
 
         # image.show('debug')
 
@@ -57,10 +84,10 @@ class BadgeDriver:
         image.paste(logo_image, (30, 33), logo_image)
 
         font_size = self.max_font_size
-        while ImageFont.truetype(self.font_path, font_size).getbbox(name)[2] > self.label_width - (
+        while ImageFont.truetype(str(self.font_path), font_size).getbbox(name)[2] > self.label_width - (
                 2 * self.name_margin):
             font_size -= 1
-        font = ImageFont.truetype(self.font_path, font_size)
+        font = ImageFont.truetype(str(self.font_path), font_size)
         name_img = Image.new('RGB', font.getbbox(name)[2:], color=(255, 255, 255))
         name_draw = ImageDraw.Draw(name_img)
         name_draw.text((0, 0), name, font=font, fill=0)
@@ -84,7 +111,7 @@ class BadgeDriver:
             logo_image.rotate(-90, expand=True)
             return logo_image
         elif space is not None and space.strip() != '':
-            tmp_font = ImageFont.truetype(self.font_path, 100)
+            tmp_font = ImageFont.truetype(str(self.font_path), 100)
             logo_image = Image.new('RGBA', tmp_font.getbbox(space)[2:], color=(255, 255, 255, 0))
             logo_draw = ImageDraw.Draw(logo_image)
             logo_draw.text((0, 0), space, font=tmp_font, fill=(0, 0, 0, 255))

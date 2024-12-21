@@ -1,0 +1,2 @@
+TAG;NeoCortex97;flipdot;flipdot.png;https://www.flipdot.org
+RECEIPT;NeoCortex97;flipdot;flipdot.png;https://www.flipdot.org

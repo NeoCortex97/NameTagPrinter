@@ -31,12 +31,12 @@ while True:
             print(e)
             socket.send(f'FAIL;{e.args}'.encode('utf-8'))
     elif command[0].lower() == 'receipt':
-            #try:
+            try:
                 receipt_driver.print(command[1], command[2], command[3], command[4])
                 socket.send(b'OK')  # Print receipt here
-            #except DeviceNotFoundError as e:
-            #    print(e)
-            #    socket.send(f'FAIL;{e.args}'.encode('utf-8'))
+            except DeviceNotFoundError as e:
+                print(e)
+                socket.send(f'FAIL;{e.msg}'.encode('utf-8'))
     elif command[0].lower() == 'stats':
         sleep(1)
         socket.send(b'OK')  # Print stats here
