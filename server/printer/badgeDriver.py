@@ -31,7 +31,7 @@ class BadgeDriver:
 
         image = self.generate_image(name, space, logo, url)
 
-        image.show('debug')
+        # image.show('debug')
 
         outfile = mktemp(prefix='png')
         image.save(outfile, 'png')
