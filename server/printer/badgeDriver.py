@@ -37,7 +37,7 @@ class BadgeDriver:
         image.save(outfile, 'png')
 
         self.conn.printFile(self.PRINTER_NAME, outfile, f'Badge {name}', {
-            'print-scaling': 'fill',
+            'print-scaling': 'fit',
             'PageSize': 'Custom.62x109mm',
             'MediaType': 'Roll',
             'CutMedia': 'Auto'
