@@ -10,8 +10,10 @@ from PIL import ImageDraw
 from PIL import ImageFont
 from cups import IPPError
 
-FONT_FOLDER = pathlib.Path('../assets/fonts/')
-LOGO_PATH = pathlib.Path('../assets/images/logos')
+PROJECT_ROOT = pathlib.Path(__file__).parent.parent.parent
+ASSET_ROOT = PROJECT_ROOT.joinpath('assets')
+FONT_FOLDER = ASSET_ROOT.joinpath('fonts')
+LOGO_PATH = ASSET_ROOT .joinpath('images/logos')
 
 class BadgeDriver:
     def __init__(self):
