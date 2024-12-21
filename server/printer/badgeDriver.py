@@ -31,11 +31,13 @@ class BadgeDriver:
 
         image = self.generate_image(name, space, logo, url)
 
+        image.show('debug')
+
         outfile = mktemp(prefix='png')
         image.save(outfile, 'png')
 
         self.conn.printFile(self.PRINTER_NAME, outfile, f'Badge {name}', {
-            'print-scaling': 'fill',
+            'print-scaling': 'none',
             'PageSize': 'Custom.62x109mm',
             'MediaType': 'Roll',
             'CutMedia': 'Auto'
@@ -64,7 +66,7 @@ class BadgeDriver:
             code: Image = qrcode.make(url).get_image()
             image.paste(code, (image.size[0] - code.size[0], 0))
 
-        # image.rotate(-90, expand=True)
+        image.rotate(-90, expand=True)
         image = image.convert('1')
         return image
 
