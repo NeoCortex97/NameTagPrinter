@@ -1,6 +1,9 @@
 from time import sleep
 
+import cups
 import zmq
+from cups import IPP_ERROR
+from escpos.exceptions import DeviceNotFoundError
 
 from printer.badgeDriver import BadgeDriver
 from printer.receipotDriver import ReceiptDriver
@@ -24,11 +27,14 @@ while True:
         try:
             badge_driver.print(command[1], command[2], command[3], command[4])
             socket.send(b'OK')
-        except :
-            socket.send(b'FAIL')
+        except cups.IPPError as e:
+            socket.send(f'FAIL;{e.args}'.encode('utf-8'))
     elif command[0].lower() == 'receipt':
-            receipt_driver.print(command[1], command[2], command[3], command[4])
-            socket.send(b'OK')  # Print receipt here
+            try:
+                receipt_driver.print(command[1], command[2], command[3], command[4])
+                socket.send(b'OK')  # Print receipt here
+            except DeviceNotFoundError as e:
+                socket.send(f'FAIL;{e.args}'.encode('utf-8'))
     elif command[0].lower() == 'stats':
         sleep(1)
         socket.send(b'OK')  # Print stats here

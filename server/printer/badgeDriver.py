@@ -8,14 +8,14 @@ import qrcode
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-
+from cups import IPPError
 
 FONT_FOLDER = pathlib.Path('../assets/fonts/')
 LOGO_PATH = pathlib.Path('../assets/images/logos')
 
 class BadgeDriver:
     def __init__(self):
-        self.PRINTER_NAME = 'Brother_QL_820NWB'
+        self.PRINTER_NAME = 'Brother_QL_820NWB_USB'
         self.LABEL_HEIGHT = 696
         self.SCALING_FACTOR = 2.5
         self.LOGO_THRESHOLD = 10
