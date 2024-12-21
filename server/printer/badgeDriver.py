@@ -41,7 +41,8 @@ class BadgeDriver:
             'PageSize': '62x100mm',
             'media': 'custom_62x100mm_62x100mm',
             'MediaType': 'Roll',
-            'CutMedia': 'Auto'
+            'CutMedia': 'Auto',
+            'cupsPrintQuality': 'High',
         })
 
         print(self.conn.getJobAttributes(job_id))
