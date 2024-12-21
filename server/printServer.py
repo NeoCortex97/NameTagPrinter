@@ -11,8 +11,8 @@ from printer.receipotDriver import ReceiptDriver
 context = zmq.Context()
 
 socket = context.socket(zmq.REP)
-socket.bind('tcp://127.0.0.1:6660')
-print('listening on tcp://127.0.0.1:6660')
+socket.bind('tcp://0.0.0.0:6660')
+print('listening on tcp://0.0.0.0:6660')
 
 badge_driver = BadgeDriver()
 receipt_driver = ReceiptDriver()
