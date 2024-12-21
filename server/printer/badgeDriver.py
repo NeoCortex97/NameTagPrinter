@@ -66,7 +66,7 @@ class BadgeDriver:
             code: Image = qrcode.make(url).get_image()
             image.paste(code, (image.size[0] - code.size[0], 0))
 
-        image.rotate(-90, expand=True)
+        image = image.rotate(-90, expand=True)
         image = image.convert('1')
         return image
 
