@@ -17,7 +17,7 @@ LOGO_PATH = ASSET_ROOT .joinpath('images/logos')
 
 class BadgeDriver:
     def __init__(self):
-        self.PRINTER_NAME = 'Brother_QL_820NWB_USB'
+        self.PRINTER_NAME = 'Brother_QL_820NWB'
         self.LABEL_HEIGHT = 696
         self.SCALING_FACTOR = 2.5
         self.LOGO_THRESHOLD = 10
@@ -39,6 +39,7 @@ class BadgeDriver:
         job_id = self.conn.printFile(self.PRINTER_NAME, outfile, f'Badge {name}', {
             'print-scaling': 'fit',
             'PageSize': '62x100mm',
+            'media': 'custom_62x100mm_62x100mm',
             'MediaType': 'Roll',
             'CutMedia': 'Auto'
         })
