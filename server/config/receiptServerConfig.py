@@ -11,7 +11,10 @@ class LogoNotFoundError(Exception):
 
 class PrinterConfig:
     def __init__(self):
-        pass
+        self.vendor_id: int = int(os.getenv('RECEIPT_PRINTER_VID', '0x04b8'), base=16)
+        self.product_id: int = int(os.getenv('RECEIPT_PRINTER_PID', '0x0202'), base=16)
+        self.model: str = str(os.getenv('RECEIPT_PRINTER_MODEL', 'TM-T88III'))
+
 
 class ReceiptConfig:
     PROJECT_ROOT = pathlib.Path(__file__).parent.parent.parent  # TODO: Deprecate this hacky solution
