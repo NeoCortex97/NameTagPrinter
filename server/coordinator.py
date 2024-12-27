@@ -9,7 +9,7 @@ frontend_socket = context.socket(zmq.REP)
 
 
 def main():
-    pass
+
 
 
 if __name__ == '__main__':
