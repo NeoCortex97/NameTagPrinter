@@ -6,7 +6,7 @@ from cups import IPP_ERROR
 from escpos.exceptions import DeviceNotFoundError
 
 from printer.badgeDriver import BadgeDriver
-from printer.receipotDriver import ReceiptDriver
+from printer.receiptDriver import ReceiptDriver
 
 context = zmq.Context()
 
