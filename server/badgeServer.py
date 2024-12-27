@@ -77,10 +77,11 @@ def parse_job(serialized: str, config) -> Job:
 
     params['LOGO'] = config.logos[params['LOGO']]
     params = {key.lower(): value for key, value in params.items()}
-
     return Job(**params)
 
+
 def main():
+    global worker
     config = BadgeServerConfig()
     print(f'binding to {config.connection_string}')
     socket.bind(config.connection_string)
