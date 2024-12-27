@@ -53,8 +53,8 @@ class BadgeDriver:
         #
         # send(
         #     instructions=instructions,
-        #     printer_identifier='tcp://192.168.178.135',
-        #     backend_identifier='network',
+        #     printer_identifier='usb://0x04f9:0x209d',
+        #     backend_identifier='pyusb',
         #     blocking=True
         # )
 
@@ -68,13 +68,13 @@ class BadgeDriver:
             'PageSize': 'Custom.62x109mm',
             'MediaType': 'Roll',
             'CutMedia': 'Auto',
-            'media': 'custom_62x109mm_62x109mm',
+            'media': 'Custom.62x109mm',
 
         })
 
         print(self.conn.getJobAttributes(job_id))
 
-        self.wait_for_jobs()
+        self.wait_for_jobs(job_id)
 
     def generate_image(self, name, space, logo, url):
         image = Image.new('RGBA', (self.label_width, self.LABEL_HEIGHT), (255, 255, 255))
@@ -106,7 +106,7 @@ class BadgeDriver:
             path = LOGO_PATH.joinpath(logo)
             logo_image = Image.open(path).convert('RGBA')
             logo_image = logo_image.resize((int(logo_image.size[0] / self.SCALING_FACTOR), int(logo_image.size[1] / self.SCALING_FACTOR)))
-            logo_image = logo_image.convert('LA')
+            # logo_image = logo_image.convert('LA')
             logo_image = logo_image.point(lambda p : 255 if p > self.LOGO_THRESHOLD else 0)
             logo_image.rotate(-90, expand=True)
             return logo_image
@@ -117,8 +117,11 @@ class BadgeDriver:
             logo_draw.text((0, 0), space, font=tmp_font, fill=(0, 0, 0, 255))
             return logo_image
 
-    def wait_for_jobs(self):
+    def wait_for_jobs(self, job_id):
         jobs: dict = self.conn.getJobs()
-        while len(jobs.keys()) > 0:
+        while job_id in jobs.keys():
             sleep(0.25)
             jobs = self.conn.getJobs()
+
+    def process(self, job):
+        self.print(job.name, job.space, job.logo, job.url)

@@ -52,3 +52,55 @@ ZeroMQ has different messaging patterns that are implemented by the sockets. in 
 
 This means that the server implements a Reply socket. Request sockets can send requests and have to receive an answer as the next message.
 Reasons for choosing this pattern was the bidirectional nature and the option to block a frontend application until a job is completed.
+
+## Components
+
+I want to split the application into multiple parts, so they can be mixed and matched as needed, or depending on available 
+hardware and software
+
+### Coordinator
+
+The coorinator is meant as a frontend server, so that your ui can talk to a central service. It receives commands and 
+forwards them commands to the correct service. If you want to think in terms of https terms, you could call the 
+coordinator a gateway service, or a reverse proxy.
+It is not implemented yet.
+
+### JobSpooler
+
+The job spooler is meant as a service to store batch jobs and starts issuing commands to the badge and receipt server on command.
+it is not implemented yet.
+
+### BadgeServer
+
+The badge server is responsible for receiving jobs from coordinator and job spooler.
+It renders and prints the badges.  
+This component is mainly in existence, so it can run on a different computer tan the rest of the system. 
+Having the ability to split this part from every other component is due to strange behavior of cups.
+Depending on the cups version cups might assume the wrong media size, or messes up the scaling.
+But cups 1.4.7 works for me.
+
+### ReceiptServer
+
+The receipt server is split into a separate part, because I see it aas an optional component.
+It can run on a different computer than the other parts. 
+As most receipt printers are serial ports at heart and serial ports are very simple to handle.
+In future there could even be a drop in replacement that sends requests to an esp32 that drives the printer.
+
+### QueueServer
+
+In some applications it might be fun to display the length or stats of the current print queue.
+It is supposed to run on a second display, or even on a simple 2 line customer display.
+
+details have to be determined, as I dont have fitting hardware for this component yet.
+
+## Ports
+
+This Application is has multiple parts that can run independently from each other and thus uses multiple ports
+
+| Component     | Port | Protocol | Pattern       |
+|---------------|------|----------|---------------|
+| Coordinator   | 6060 | TCP      | REQ/REP       |
+| BadgeServer   | 6061 | TCP      | SERVER/CLIENT |
+| ReceiptServer | 6062 | TCP      | SERVER/CLIENT |
+| QueueServer   | 6063 | TCP      | REQ/REP       |
+| JobSpooler    | 6064 | TCP      | REQ/REP       |
