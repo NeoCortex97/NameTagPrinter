@@ -11,24 +11,13 @@ import zmq
 
 from config.badgeServerConfig import BadgeServerConfig
 from config.receiptServerConfig import ReceiptServerConfig
+from jobs.receiptJob import Job
 from printer.badgeDriver import BadgeDriver
 from printer.receiptDriver import ReceiptDriver
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
 boot = datetime.datetime.now()
-
-class Job:
-    def __init__(self, name: str, space: str = 'independent', logo: pathlib.Path = None, url: str = None, copies: int = 1):
-        self.name = name
-        self.space = space
-        self.logo = logo
-        self.url = url
-        self.copies = copies
-        self.id = uuid.uuid4()
-
-    def __repr__(self):
-        return f'[{self.id}] {self.space} -> {self.name} ({self.logo}, {self.url}) x{self.copies}'
 
 class ReceiptWorker(threading.Thread):
     def __init__(self, queue: Queue[Job], driver: ReceiptDriver):
@@ -90,7 +79,7 @@ def main():
         try:
             command = message.strip().split(';')[0]
             match command.upper():
-                case 'ADD':
+                case 'ADD_':
                     job = parse_job(';'.join(message.split(';')[1:]), config)
                     badge_queue.put(job, timeout=config.timeout)
                     print(job)
@@ -107,3 +96,7 @@ def main():
                     socket.send(str(datetime.datetime.now() - boot).encode('utf-8'))
         except queue.Full:
             socket.send(b'QUEUE_ERROR;message=Queue full - Try again later')
+
+
+if __name__ == '__main__':
+    main()

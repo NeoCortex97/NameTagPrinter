@@ -4,8 +4,6 @@ from tempfile import mktemp
 import qrcode
 from escpos.printer import Usb
 
-from receiptServer import Job
-
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent.parent
 ASSET_ROOT = PROJECT_ROOT.joinpath('assets')
 
@@ -28,5 +26,5 @@ class ReceiptDriver:
         self.printer.image(temppath, center=True)
         self.printer.cut(mode='PART')
 
-    def process(self, job:Job):
+    def process(self, job):
         self.print(job.name, job.space, job.logo, job.url)

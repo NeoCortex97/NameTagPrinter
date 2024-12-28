@@ -74,7 +74,7 @@ class BadgeServerConfig:
         dotenv.load_dotenv()
 
         self.port: int = int(os.getenv('BADGE_SERVER_PORT', 6061))
-        self.interface: str = str(os.getenv('BADGE_SERVER_INTERFACE', '127.0.0.1'))
+        self.interface: str = str(os.getenv('BADGE_SERVER_INTERFACE', '0.0.0.0'))
         self.transport: str = str(os.getenv('BADGE_SERVER_TRANSPORT', 'tcp'))
         self.queue_size: int = int(os.getenv('BADGE_SERVER_QUEUE_SIZE', 16))
         self.timeout: int = int(os.getenv('BADGE_SERVER_QUEUE_TIMEOUT', 2))

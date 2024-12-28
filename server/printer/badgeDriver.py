@@ -101,8 +101,8 @@ class BadgeDriver:
         image = image.convert('1')
         return image
 
-    def process_logo(self, space: str, logo: str):
-        if logo is not None and logo.strip() != '' and LOGO_PATH.joinpath(logo).exists():
+    def process_logo(self, space: str, logo: str or pathlib.Path):
+        if type(logo) == str and logo is not None and logo.strip() != '' and LOGO_PATH.joinpath(logo).exists():
             path = LOGO_PATH.joinpath(logo)
             logo_image = Image.open(path).convert('RGBA')
             logo_image = logo_image.resize((int(logo_image.size[0] / self.SCALING_FACTOR), int(logo_image.size[1] / self.SCALING_FACTOR)))
@@ -110,11 +110,20 @@ class BadgeDriver:
             logo_image = logo_image.point(lambda p : 255 if p > self.LOGO_THRESHOLD else 0)
             logo_image.rotate(-90, expand=True)
             return logo_image
-        elif space is not None and space.strip() != '':
+        elif type(logo) == str and space is not None and space.strip() != '':
             tmp_font = ImageFont.truetype(str(self.font_path), 100)
             logo_image = Image.new('RGBA', tmp_font.getbbox(space)[2:], color=(255, 255, 255, 0))
             logo_draw = ImageDraw.Draw(logo_image)
             logo_draw.text((0, 0), space, font=tmp_font, fill=(0, 0, 0, 255))
+            return logo_image
+        elif type(logo) == pathlib.PosixPath:
+            logo_image = Image.open(logo)
+            height_factor = logo_image.size[1] / (self.LABEL_HEIGHT / 2.1)
+            width_factor = logo_image.size[1] / (self.label_width / 3)
+            scaling_factor = max(height_factor, width_factor)
+            logo_image = logo_image.resize((int(logo_image.size[0]/scaling_factor), int(logo_image.size[1] / scaling_factor)))
+            logo_image = logo_image.convert('RGBA')
+            print(logo_image.size)
             return logo_image
 
     def wait_for_jobs(self, job_id):
