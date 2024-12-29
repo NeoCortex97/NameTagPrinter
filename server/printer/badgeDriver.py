@@ -58,7 +58,7 @@ class BadgeDriver:
         #     blocking=True
         # )
 
-        # image.show('debug')
+        image.show('debug')
 
         outfile = mktemp(prefix='png')
         image.save(outfile, 'png')
