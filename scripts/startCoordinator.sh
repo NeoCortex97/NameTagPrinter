@@ -2,4 +2,4 @@
 
 cd ..
 source .venv/bin/activate
-python server/coordinator.py &
+python server/coordinator.py

@@ -2,4 +2,4 @@
 
 cd ..
 source .venv/bin/activate
-python server/badgeServer.py &
+python server/badgeServer.py

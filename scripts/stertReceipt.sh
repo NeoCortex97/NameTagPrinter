@@ -2,4 +2,4 @@
 
 cd ..
 source .venv/bin/activate
-python server/receiptServer.py &
+python server/receiptServer.py
