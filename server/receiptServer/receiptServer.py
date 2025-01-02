@@ -1,19 +1,14 @@
-import atexit
 import datetime
-import pathlib
 import queue
 import threading
-import uuid
 from queue import Queue
 from time import sleep
 
 import zmq
 
-from config.badgeServerConfig import BadgeServerConfig
-from config.receiptServerConfig import ReceiptServerConfig
+from receiptServer.config.receiptConfig import ReceiptServerConfig
 from jobs.receiptJob import Job
-from drivers.badgeDriver import BadgeDriver
-from drivers.receiptDriver import ReceiptDriver
+from receiptServer.drivers.escPosDriver import ReceiptDriver
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
