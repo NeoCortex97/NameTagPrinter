@@ -1,17 +1,15 @@
 import atexit
 import datetime
-import pathlib
 import queue
 import threading
-import uuid
 from queue import Queue
 from time import sleep
 
 import zmq
 
-from config.badgeServerConfig import BadgeServerConfig
+from paperLabelServer.config.paperLabelConfig import BadgeServerConfig
 from jobs.badgeJob import Job
-from drivers.badgeDriver import BadgeDriver
+from paperLabelServer.drivers.brotherQLDriver import BadgeDriver
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
