@@ -97,10 +97,11 @@ details have to be determined, as I dont have fitting hardware for this componen
 
 This Application is has multiple parts that can run independently from each other and thus uses multiple ports
 
-| Component     | Port | Protocol | Pattern       |
-|---------------|------|----------|---------------|
-| Coordinator   | 6060 | TCP      | REQ/REP       |
-| BadgeServer   | 6061 | TCP      | SERVER/CLIENT |
-| ReceiptServer | 6062 | TCP      | SERVER/CLIENT |
-| QueueServer   | 6063 | TCP      | REQ/REP       |
-| JobSpooler    | 6064 | TCP      | REQ/REP       |
+| Component     | Port | Protocol | Pattern |
+|---------------|------|----------|---------|
+| Coordinator   | 6060 | TCP      | REQ/REP |
+| BadgeServer   | 6061 | TCP      | REQ/REP |
+| ReceiptServer | 6062 | TCP      | REQ/REP |
+| DisplayServer | 6063 | TCP      | REQ/REP |
+| QueueServer   | 6064 | TCP      | REQ/REP |
+| JobSpooler    | 6065 | TCP      | REQ/REP |
