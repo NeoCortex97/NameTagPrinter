@@ -1,6 +1,5 @@
 import threading
 import uuid
-from logging.handlers import SysLogHandler
 from queue import Queue
 from threading import Thread
 from time import sleep
@@ -10,7 +9,7 @@ import logging
 
 __VERSION__ = '1.0'
 
-from config.coordinatorConfig import CoordinatorConfig
+from gateway.config import CoordinatorConfig
 
 log = logging.getLogger(__name__)
 context = zmq.Context()
