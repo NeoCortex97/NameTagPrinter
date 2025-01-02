@@ -13,13 +13,13 @@ from rich.progress import track
 
 spaces: list
 
-image_path = pathlib.Path('assets/images/raw')
+image_path = pathlib.Path('../../assets/images/raw')
 
 if not image_path.exists():
     image_path.mkdir(parents=True, exist_ok=True)
 
 try:
-    spaces = json.load(pathlib.Path('spaces.json').open('r'))
+    spaces = json.load(pathlib.Path('../../data/spaces.json').open('r'))
 except FileNotFoundError or JSONDecodeError:
     spaces = []
 
@@ -55,7 +55,7 @@ for name, url in track(spacedirectory.directory.get_spaces_list().items()):
         continue
 
     print(' LOGO', data['logo'], '', end='')
-    logo_path = pathlib.Path('assets/images/raw').joinpath(
+    logo_path = pathlib.Path('../../assets/images/raw').joinpath(
         f'{data["space"].replace(" ", "_").replace(".", "").replace("/", "_")}.png')
     if logo_path.exists():
         print('SKIPPED')
@@ -76,5 +76,5 @@ for name, url in track(spacedirectory.directory.get_spaces_list().items()):
 
 print(f'Added {counter} spaces')
 
-with pathlib.Path('spaces.json').open('w') as file:
+with pathlib.Path('../../data/spaces.json').open('w') as file:
     json.dump(spaces, file)
