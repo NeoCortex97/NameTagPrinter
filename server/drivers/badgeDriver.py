@@ -1,5 +1,6 @@
 import os
 import pathlib
+from pprint import pprint
 from tempfile import mktemp
 from time import sleep
 
@@ -39,7 +40,7 @@ class BadgeDriver:
         image = self.generate_image(name, space, logo, url)
 
         # instructions = convert(
-        #     qlr=self.printer,
+        #     qlr=self.drivers,
         #     images=[image],
         #     label='62',
         #     rotate='0',  # 'Auto', '0', '90', '270'
@@ -66,13 +67,12 @@ class BadgeDriver:
         job_id = self.conn.printFile(self.PRINTER_NAME, outfile, f'Badge {name}', {
             'print-scaling': 'fill',
             'PageSize': 'Custom.62x109mm',
+            'ColorModel': 'AutoGray',
             'MediaType': 'Roll',
             'CutMedia': 'Auto',
-            'media': 'Custom.62x109mm',
-
         })
 
-        print(self.conn.getJobAttributes(job_id))
+        pprint(self.conn.getJobAttributes(job_id))
 
         self.wait_for_jobs(job_id)
 
@@ -98,7 +98,7 @@ class BadgeDriver:
             image.paste(code, (image.size[0] - code.size[0], 0))
 
         image = image.rotate(-90, expand=True)
-        image = image.convert('1')
+        # image = image.convert('L')
         return image
 
     def process_logo(self, space: str, logo: str or pathlib.Path):
