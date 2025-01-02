@@ -11,7 +11,7 @@ import zmq
 
 from config.badgeServerConfig import BadgeServerConfig
 from jobs.badgeJob import Job
-from printer.badgeDriver import BadgeDriver
+from drivers.badgeDriver import BadgeDriver
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)

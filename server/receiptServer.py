@@ -12,8 +12,8 @@ import zmq
 from config.badgeServerConfig import BadgeServerConfig
 from config.receiptServerConfig import ReceiptServerConfig
 from jobs.receiptJob import Job
-from printer.badgeDriver import BadgeDriver
-from printer.receiptDriver import ReceiptDriver
+from drivers.badgeDriver import BadgeDriver
+from drivers.receiptDriver import ReceiptDriver
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
