@@ -1,6 +1,6 @@
 import json
 import uuid
-from abc import ABC
+from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
 from typing import Annotated, Self
@@ -139,10 +139,19 @@ class Job(ABC):
         self.mediaSize: MediaSize = MediaSize(0, 0)
         self.id : uuid = uuid.uuid4()
         self.priority: Annotated[int, Ge(0)] = 10
-        self.data = None
         self.status: JobStatus = JobStatus.INITIALIZING
         self.rotation: int = 0
+        self._data = None
         self.copies: Annotated[int, Ge(1)] = 1
+
+    @property
+    def data(self):
+        return self._data
+
+    @data.setter
+    @abstractmethod
+    def data(self, data):
+        self._data = data
 
     @classmethod
     def parse(cls, message: str) -> Self:
