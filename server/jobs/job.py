@@ -8,7 +8,7 @@ from typing import Annotated, Self
 from annotated_types import Ge, Gt
 
 from jobs.exceptions import NoJobTypeError, NoMediaTypeError, NoMediaSizeError, NoJobDataError, InvalidJobTypeError, \
-    InvalidMediaTypeError, InvalidMediaSizeError
+    InvalidMediaTypeError, InvalidMediaSizeError, InvalidRotationError, InvalidPriorityError, InvalidNumberOfCopiesError
 
 
 class JobType(Enum):
@@ -115,15 +115,28 @@ class JobStatus(Enum):
 
 @dataclass
 class MediaSize:
+    """ This class describes the Media to be used.
+
+    width and height are in relation to the way the medium is oriented in thw printer.\n
+
+    :param width: Represents the width of the medium.
+    :type width: int greater than 0
+    :param height: Represents the height of the medium.
+    :type height: int greater than 0
+    """
     width: Annotated[int, Gt(0)]
     height: Annotated[int, Gt(0)]
+
+    def validate(self):
+        if self.width <= 0 or self.height <= 0:
+            raise InvalidMediaSizeError()
 
 
 class Job(ABC):
     def __init__(self):
         self.jobType: JobType = JobType.INVALID
         self.media: Media = Media.DUMMY
-        self.mediaSize: MediaSize = None
+        self.mediaSize: MediaSize = MediaSize(0, 0)
         self.id : uuid = uuid.uuid4()
         self.priority: Annotated[int, Ge(0)] = 10
         self.data = None
@@ -155,6 +168,8 @@ class Job(ABC):
         job.status = JobStatus.from_string(data['status'])
 
         job.validate()
+        if job.status == JobStatus.INITIALIZING:
+            job.status = JobStatus.INITIALIZED
 
         return job
 
@@ -163,5 +178,10 @@ class Job(ABC):
             raise InvalidJobTypeError()
         if self.media == Media.INVALID:
             raise InvalidMediaTypeError()
-        if self.mediaSize.width <= 0 or self.mediaSize.height <= 0:
-            raise InvalidMediaSizeError()
+        self.mediaSize.validate()
+        if self.rotation not in [0, 90, 180, 270]:
+            raise InvalidRotationError()
+        if self.priority <= 0:
+            raise  InvalidPriorityError()
+        if self.copies < 1:
+            raise InvalidNumberOfCopiesError()

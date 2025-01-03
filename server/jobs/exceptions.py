@@ -24,3 +24,15 @@ class InvalidMediaTypeError(Exception):
 
 class InvalidMediaSizeError(Exception):
     pass
+
+
+class InvalidRotationError(Exception):
+    pass
+
+
+class InvalidPriorityError(Exception):
+    pass
+
+
+class InvalidNumberOfCopiesError(Exception):
+    pass
