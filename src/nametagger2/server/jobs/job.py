@@ -134,6 +134,9 @@ class MediaSize:
 
 
 class Job(ABC):
+    """ A generic representation of a print job.
+
+    """
     def __init__(self):
         self.jobType: JobType = JobType.INVALID
         self.media: Media = Media.DUMMY
@@ -154,6 +157,15 @@ class Job(ABC):
         self._data = data
 
     def validate(self):
+        """ Verifies the loaded data is valid.
+        In an ideal world this should allways return true.
+        If it raises an exception, you should forward te exception to your client and dop the job.
+
+        :return: Nothing.
+        :raise: InvalidJobTypeError if the JobType has the Value INVALID.
+                Invalid jobs should never be transmitted through a socket. It is only used if the jo is not yet fully constructed.
+        :raise: InvalidMediaTypeError
+        """
         if self.jobType == JobType.INVALID:
             raise InvalidJobTypeError()
         if self.media == Media.INVALID:

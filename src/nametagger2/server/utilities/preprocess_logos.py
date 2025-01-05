@@ -13,8 +13,8 @@ def on_key(event):
         pass
 
 
-raw_path = pathlib.Path('../../assets/images/raw')
-tag_lib_path = pathlib.Path('../../data/tags.json')
+raw_path = pathlib.Path('../../../../assets/images/raw')
+tag_lib_path = pathlib.Path('../../../../data/tags.json')
 
 matplotlib.use('TkAgg')
 
