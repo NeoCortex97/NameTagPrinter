@@ -4,11 +4,11 @@ import uuid
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from enum import Enum
-from typing import Annotated, Self
+from typing import Annotated
 
 from annotated_types import Ge, Gt
 
-from jobs.exceptions import NoJobTypeError, NoMediaTypeError, NoMediaSizeError, NoJobDataError, InvalidJobTypeError, \
+from jobs.exceptions import InvalidJobTypeError, \
     InvalidMediaTypeError, InvalidMediaSizeError, InvalidRotationError, InvalidPriorityError, InvalidNumberOfCopiesError
 
 

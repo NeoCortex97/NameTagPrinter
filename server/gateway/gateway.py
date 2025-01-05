@@ -9,7 +9,7 @@ import logging
 
 __VERSION__ = '1.0'
 
-from gateway.config import CoordinatorConfig
+from gateway.config.coordinatorConfig import CoordinatorConfig
 
 log = logging.getLogger(__name__)
 context = zmq.Context()

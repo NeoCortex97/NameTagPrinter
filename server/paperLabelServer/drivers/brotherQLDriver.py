@@ -1,4 +1,3 @@
-import os
 import pathlib
 from pprint import pprint
 from tempfile import mktemp
@@ -11,8 +10,6 @@ from PIL import ImageDraw
 from PIL import ImageFont
 from brother_ql import BrotherQLRaster
 from brother_ql.devicedependent import models
-from brother_ql.backends.helpers import send
-from brother_ql.conversion import convert
 
 PROJECT_ROOT = pathlib.Path(__file__).parent.parent.parent
 ASSET_ROOT = PROJECT_ROOT.joinpath('assets')
