@@ -1,3 +1,4 @@
+import base64
 import json
 import uuid
 from abc import ABC, abstractmethod
@@ -149,38 +150,8 @@ class Job(ABC):
         return self._data
 
     @data.setter
-    @abstractmethod
     def data(self, data):
         self._data = data
-
-    @classmethod
-    def parse(cls, message: str) -> Self:
-        job = Job()
-
-        data = json.loads(message)
-
-        if 'type' not in data.keys():
-            raise NoJobTypeError()
-        if 'media' not in data.keys():
-            raise NoMediaTypeError()
-        if 'size' not in data.keys():
-            raise NoMediaSizeError()
-        if 'data' not in data.keys():
-            raise NoJobDataError()
-
-        job.jobType = JobType.from_string(data['type'])
-        job.media = Media.from_string(data['media'])
-        job.mediaSize = MediaSize(data['size']['width'], data['size']['height'])
-        if 'priority' in data.keys():
-            job.priority = data['priority']
-        job.data = data['data']
-        job.status = JobStatus.from_string(data['status'])
-
-        job.validate()
-        if job.status == JobStatus.INITIALIZING:
-            job.status = JobStatus.INITIALIZED
-
-        return job
 
     def validate(self):
         if self.jobType == JobType.INVALID:
@@ -194,3 +165,20 @@ class Job(ABC):
             raise  InvalidPriorityError()
         if self.copies < 1:
             raise InvalidNumberOfCopiesError()
+
+    def to_json(self) -> str:
+        return json.dumps({
+            'id': self.id.hex,
+            'type': self.jobType.value,
+            'media': self.media.value,
+            'size': {'width': self.mediaSize.width, 'height': self.mediaSize.height},
+            'priority': self.priority,
+            'status': self.status.value,
+            'copies': self.copies,
+            'data': base64.b64encode(self.get_data_bytes()).decode('utf-8')
+        })
+
+    @abstractmethod
+    def get_data_bytes(self) -> bytes:
+        pass
+
