@@ -4,20 +4,76 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a3b10e01-5b24-4ae8-85b6-3838d815919f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/NameTagger2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/routers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/routers/nametags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/routers/spaces.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/printer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/printer/test.py" afterDir="false" />
+    <list default="true" id="a3b10e01-5b24-4ae8-85b6-3838d815919f" name="Changes" comment="added project metadata">
+      <change afterPath="$PROJECT_DIR$/src/badger/server/jobServer/jobServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/paperLabelServer2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/processors/rasterProcessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/processors/rawProcessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/serialDisplayServer/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/serialDisplayServer/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/serialDisplayServer/config/serialDisplayServerConfig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/serialDisplayServer/displayServer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/utilities/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/utilities/dbusNotification.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/utilities/monitorTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/badger/server/utilities/pingDumpTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unitFiles/badger-jobserver.service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unitFiles/badger-paperlabelserver.service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unitFiles/badger-receiptserver.service" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unitFiles/badger.service" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NameTagger2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NameTagger2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/install.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/client/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/startJobServer.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/client/barcodeClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/client/barcodeClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/client/cliClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/client/cliClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/client/scriptClient.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/client/scriptClient.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/stopJobServer.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/drivers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/drivers/driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/drivers/driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/gateway/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/client/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/gateway/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/gateway/config/coordinatorConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/gateway/config/coordinatorConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/gateway/gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/gateway/gateway.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobServer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobServer/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/config/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobServer/config/jobServerConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobServer/config/jobServerConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobServer/jobServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/parsing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/drivers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/badgeJob.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/badgeJob.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/exceptions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/job.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/job.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/rasterJob.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/rasterJob.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/receiptJob.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/receiptJob.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/jobs/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/gateway/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/gateway/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/config/paperLabelConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/config/paperLabelConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/drivers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobServer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/drivers/brotherQLDriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/drivers/brotherQLDriver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/paperLabelServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/paperLabelServer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/processors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobServer/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/paperLabelServer/processors/rasterProcessor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/processors/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/jobs/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/processors/jobProcessor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/processors/jobProcessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/receiptServer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/receiptServer/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/receiptServer/config/receiptConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/receiptServer/config/receiptConfig.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/receiptServer/drivers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/drivers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/receiptServer/drivers/escPosDriver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/receiptServer/drivers/escPosDriver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/receiptServer/receiptServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/receiptServer/receiptServer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/serialDisplayServer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/processors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/serialDisplayServer/config/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/processors/scriptProcessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/serialDisplayServer/config/serialDisplayServerConfig.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/paperLabelServer/processors/templateProcessor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/serialDisplayServer/displayServer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/receiptServer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/utilities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/processors/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/utilities/build_space_directory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/utilities/build_space_directory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nametagger2/server/utilities/preprocess_logos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/utilities/preprocess_logos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tornadoZmqTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/utilities/tornadoZmqTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unitFiles/badgeService" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/receiptServer/config/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unitFiles/coordinatorService" beforeDir="false" afterPath="$PROJECT_DIR$/src/badger/server/receiptServer/drivers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unitFiles/receiptService" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +90,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -45,22 +104,51 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.badgeDriver.executor": "Run",
+    "Python.badgeServer.executor": "Run",
+    "Python.build_space_directory.executor": "Run",
+    "Python.cliClient.executor": "Run",
+    "Python.coordinator.executor": "Run",
+    "Python.dbusNotification.executor": "Run",
+    "Python.logger (1).executor": "Run",
+    "Python.logger.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.monitorTest.executor": "Run",
+    "Python.paperLabelServer2.executor": "Run",
+    "Python.pingDumpTest.executor": "Run",
+    "Python.preprocess_logos.executor": "Run",
+    "Python.printServer (1).executor": "Run",
+    "Python.printServer.executor": "Run",
+    "Python.receiptServer.executor": "Run",
+    "Python.scriptClient.executor": "Run",
     "Python.test.executor": "Run",
+    "Python.test2.executor": "Run",
+    "Python.tornadoZmqTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Shell Script.startCoordinator.sh.executor": "Run",
     "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings"
+    "last_opened_file_path": "/home/stefan/PycharmProjecs/Thermalprinter/NameTagger2/assets/images/logos",
+    "run.code.analysis.last.selected.profile": "aDefault",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images/logos" />
+      <recent name="$PROJECT_DIR$/backend/assets/images" />
+      <recent name="$PROJECT_DIR$/backend/app/printer" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\schmelzs\PycharmProjects\NameTagger2\backend\assets\images" />
-      <recent name="C:\Users\schmelzs\PycharmProjects\NameTagger2\backend" />
+      <recent name="$PROJECT_DIR$/src/badger/server/paperLabelServer/processors" />
+      <recent name="$PROJECT_DIR$/src/nametagger2/server/utilities" />
+      <recent name="$PROJECT_DIR$/src/nametagger2" />
+      <recent name="$PROJECT_DIR$/server/paperLabelServer/processors" />
+      <recent name="$PROJECT_DIR$/server/jobs" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.monitorTest">
+    <configuration name="dbusNotification" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NameTagger2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,11 +157,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/app/api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/nametagger2/server/utilities" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/app/api/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/nametagger2/server/utilities/dbusNotification.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,7 +170,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="monitorTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="NameTagger2" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,11 +179,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/app/printer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/badger/server/utilities" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/app/printer/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/badger/server/utilities/monitorTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,17 +192,94 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="paperLabelServer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NameTagger2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="BADGE_SERVER_LOGO_PATH" value="images/logos" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/paperLabelServer/paperLabelServer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="paperLabelServer2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NameTagger2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/badger/server/paperLabelServer" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/badger/server/paperLabelServer/paperLabelServer2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pingDumpTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="NameTagger2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/badger/server/utilities" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/badger/server/utilities/pingDumpTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.monitorTest" />
+      <item itemvalue="Python.dbusNotification" />
+      <item itemvalue="Python.paperLabelServer2" />
+      <item itemvalue="Python.pingDumpTest" />
+      <item itemvalue="Python.paperLabelServer" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.main" />
+        <item itemvalue="Python.monitorTest" />
+        <item itemvalue="Python.paperLabelServer2" />
+        <item itemvalue="Python.pingDumpTest" />
+        <item itemvalue="Python.dbusNotification" />
+        <item itemvalue="Python.paperLabelServer" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-fb887030ada0-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.21565.199" />
+        <option value="bundled-python-sdk-1b1018131e27-aa17d162503b-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-243.22562.180" />
       </set>
     </attachedChunks>
   </component>
@@ -130,6 +295,438 @@
       <option name="presentableId" value="Default" />
       <updated>1733675890281</updated>
     </task>
+    <task id="LOCAL-00024" summary="testing fix for wrong badge rotation 12">
+      <option name="closed" value="true" />
+      <created>1734788309300</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1734788309300</updated>
+    </task>
+    <task id="LOCAL-00025" summary="testing fix for wrong badge rotation 13">
+      <option name="closed" value="true" />
+      <created>1734788459876</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1734788459876</updated>
+    </task>
+    <task id="LOCAL-00026" summary="testing fix for wrong badge rotation 14">
+      <option name="closed" value="true" />
+      <created>1734788683806</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1734788683806</updated>
+    </task>
+    <task id="LOCAL-00027" summary="testing fix for wrong badge rotation 15">
+      <option name="closed" value="true" />
+      <created>1734790593751</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1734790593751</updated>
+    </task>
+    <task id="LOCAL-00028" summary="testing fix for wrong badge rotation 16">
+      <option name="closed" value="true" />
+      <created>1734790790185</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1734790790185</updated>
+    </task>
+    <task id="LOCAL-00029" summary="testing fix for wrong badge rotation 16">
+      <option name="closed" value="true" />
+      <created>1734793467214</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1734793467214</updated>
+    </task>
+    <task id="LOCAL-00030" summary="testing fix for wrong badge rotation 17">
+      <option name="closed" value="true" />
+      <created>1734793868950</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1734793868950</updated>
+    </task>
+    <task id="LOCAL-00031" summary="testing fix for wrong badge rotation 18">
+      <option name="closed" value="true" />
+      <created>1734794426076</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1734794426076</updated>
+    </task>
+    <task id="LOCAL-00032" summary="testing fix for wrong badge rotation 19&#10;This time with driver">
+      <option name="closed" value="true" />
+      <created>1734795672672</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1734795672672</updated>
+    </task>
+    <task id="LOCAL-00033" summary="testing fix for wrong badge rotation 20&#10;This time with driver">
+      <option name="closed" value="true" />
+      <created>1734796943898</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1734796943898</updated>
+    </task>
+    <task id="LOCAL-00034" summary="finished experimenting.&#10;quickly written a few rough clients for cli direct commands and batch processing">
+      <option name="closed" value="true" />
+      <created>1734813708494</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1734813708494</updated>
+    </task>
+    <task id="LOCAL-00035" summary="refactoring in progress.">
+      <option name="closed" value="true" />
+      <created>1735289171316</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1735289171316</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactoring in progress.&#10;MVP receipt printer">
+      <option name="closed" value="true" />
+      <created>1735295249446</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1735295249446</updated>
+    </task>
+    <task id="LOCAL-00037" summary="refactoring in progress.">
+      <option name="closed" value="true" />
+      <created>1735295266554</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1735295266554</updated>
+    </task>
+    <task id="LOCAL-00038" summary="refactoring in progress.">
+      <option name="closed" value="true" />
+      <created>1735295278579</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1735295278579</updated>
+    </task>
+    <task id="LOCAL-00039" summary="refactoring in progress.&#10;started work on coordinator">
+      <option name="closed" value="true" />
+      <created>1735295309242</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1735295309242</updated>
+    </task>
+    <task id="LOCAL-00040" summary="refactoring in progress.&#10;impülemented basic funtion on all components.">
+      <option name="closed" value="true" />
+      <created>1735394256893</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1735394256893</updated>
+    </task>
+    <task id="LOCAL-00041" summary="written start scripts">
+      <option name="closed" value="true" />
+      <created>1735485986679</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1735485986679</updated>
+    </task>
+    <task id="LOCAL-00042" summary="added coordinator config">
+      <option name="closed" value="true" />
+      <created>1735487023662</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1735487023662</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added server script displayServer.py">
+      <option name="closed" value="true" />
+      <created>1735608902299</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1735608902299</updated>
+    </task>
+    <task id="LOCAL-00044" summary="implemented start scripts">
+      <option name="closed" value="true" />
+      <created>1735608919390</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1735608919390</updated>
+    </task>
+    <task id="LOCAL-00045" summary="implemented added unit files">
+      <option name="closed" value="true" />
+      <created>1735608940872</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1735608940872</updated>
+    </task>
+    <task id="LOCAL-00046" summary="tested zmq async operation, currently uses asyncio, so tornadoZmqTest.py is mislabeled.">
+      <option name="closed" value="true" />
+      <created>1735840571000</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840571000</updated>
+    </task>
+    <task id="LOCAL-00047" summary="renamed printer to drivers.">
+      <option name="closed" value="true" />
+      <created>1735840605660</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840605660</updated>
+    </task>
+    <task id="LOCAL-00048" summary="Made some adjustments, so the servers have independent work queues.">
+      <option name="closed" value="true" />
+      <created>1735840657464</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840657464</updated>
+    </task>
+    <task id="LOCAL-00049" summary="changed to new command format.">
+      <option name="closed" value="true" />
+      <created>1735840698128</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840698128</updated>
+    </task>
+    <task id="LOCAL-00050" summary="removed test scripts.">
+      <option name="closed" value="true" />
+      <created>1735840728757</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840728757</updated>
+    </task>
+    <task id="LOCAL-00051" summary="updated README.md to reflect current ports.">
+      <option name="closed" value="true" />
+      <created>1735840753766</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840753766</updated>
+    </task>
+    <task id="LOCAL-00052" summary="implemented coordinator with coordinator.py and coordinatorConfig.py. Still misslebled. should be called gateway">
+      <option name="closed" value="true" />
+      <created>1735840802787</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1735840802787</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Restructuring project.&#10;moved receipt printer code to own package.">
+      <option name="closed" value="true" />
+      <created>1735842919471</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1735842919471</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Restructuring project.">
+      <option name="closed" value="true" />
+      <created>1735842962159</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1735842962159</updated>
+    </task>
+    <task id="LOCAL-00055" summary="removed printServer.py as legacy code.">
+      <option name="closed" value="true" />
+      <created>1735842997960</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1735842997960</updated>
+    </task>
+    <task id="LOCAL-00056" summary="restructuring project. moved badge code to paperlabel package">
+      <option name="closed" value="true" />
+      <created>1735843067437</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843067437</updated>
+    </task>
+    <task id="LOCAL-00057" summary="restructuring project. moved old utility code to own package.">
+      <option name="closed" value="true" />
+      <created>1735843112882</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843112882</updated>
+    </task>
+    <task id="LOCAL-00058" summary="restructuring project. created basic structure for new job server that will replace gateway">
+      <option name="closed" value="true" />
+      <created>1735843165247</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843165247</updated>
+    </task>
+    <task id="LOCAL-00059" summary="restructuring project. moved gatewaay code to own package">
+      <option name="closed" value="true" />
+      <created>1735843211093</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843211093</updated>
+    </task>
+    <task id="LOCAL-00060" summary="restructuring project. moved and created structure for serial customer displays.">
+      <option name="closed" value="true" />
+      <created>1735843243625</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843243625</updated>
+    </task>
+    <task id="LOCAL-00061" summary="restructuring project. moved base driver to package.">
+      <option name="closed" value="true" />
+      <created>1735843278655</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843278655</updated>
+    </task>
+    <task id="LOCAL-00062" summary="restructuring project. moved temporary data to directory utility">
+      <option name="closed" value="true" />
+      <created>1735843314847</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843314847</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Started implementing Job class and related types.">
+      <option name="closed" value="true" />
+      <created>1735851282502</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1735851282502</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Implemented first version of job base class">
+      <option name="closed" value="true" />
+      <created>1735864976339</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1735864976339</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Implemented implemented basic RasterJob.">
+      <option name="closed" value="true" />
+      <created>1735865883018</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1735865883018</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Modified job.py to have data as a property.">
+      <option name="closed" value="true" />
+      <created>1735865983890</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1735865983890</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Implemented job parsing so it can produce all kinds of jobs directly">
+      <option name="closed" value="true" />
+      <created>1736085596721</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1736085596721</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Implemented job processors.">
+      <option name="closed" value="true" />
+      <created>1736087347213</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1736087347213</updated>
+    </task>
+    <task id="LOCAL-00069" summary="saving after minimal fixes for styleguide and ide code analysis.">
+      <option name="closed" value="true" />
+      <created>1736087409899</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1736087409899</updated>
+    </task>
+    <task id="LOCAL-00070" summary="updated requirements.txt">
+      <option name="closed" value="true" />
+      <created>1736087425771</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1736087425771</updated>
+    </task>
+    <task id="LOCAL-00071" summary="made pdm project and moved code to package.">
+      <option name="closed" value="true" />
+      <created>1736089346025</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1736089346025</updated>
+    </task>
+    <task id="LOCAL-00072" summary="added project metadata">
+      <option name="closed" value="true" />
+      <created>1736089432528</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1736089432528</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Made some adjustments, so the servers have independent work queues." />
+    <MESSAGE value="changed to new command format." />
+    <MESSAGE value="removed test scripts." />
+    <MESSAGE value="updated README.md to reflect current ports." />
+    <MESSAGE value="implemented coordinator with coordinator.py and coordinatorConfig.py. Still misslebled. should be called gateway" />
+    <MESSAGE value="Restructuring project.&#10;moved receipt printer code to own package." />
+    <MESSAGE value="Restructuring project." />
+    <MESSAGE value="removed printServer.py as legacy code." />
+    <MESSAGE value="restructuring project. moved badge code to paperlabel package" />
+    <MESSAGE value="restructuring project. moved old utility code to own package." />
+    <MESSAGE value="restructuring project. created basic structure for new job server that will replace gateway" />
+    <MESSAGE value="restructuring project. moved gatewaay code to own package" />
+    <MESSAGE value="restructuring project. moved and created structure for serial customer displays." />
+    <MESSAGE value="restructuring project. moved base driver to package." />
+    <MESSAGE value="restructuring project. moved temporary data to directory utility" />
+    <MESSAGE value="Started implementing Job class and related types." />
+    <MESSAGE value="Implemented first version of job base class" />
+    <MESSAGE value="Implemented implemented basic RasterJob." />
+    <MESSAGE value="Modified job.py to have data as a property." />
+    <MESSAGE value="Implemented job parsing so it can produce all kinds of jobs directly" />
+    <MESSAGE value="Implemented job processors." />
+    <MESSAGE value="saving after minimal fixes for styleguide and ide code analysis." />
+    <MESSAGE value="updated requirements.txt" />
+    <MESSAGE value="made pdm project and moved code to package." />
+    <MESSAGE value="added project metadata" />
+    <option name="LAST_COMMIT_MESSAGE" value="added project metadata" />
   </component>
 </project>

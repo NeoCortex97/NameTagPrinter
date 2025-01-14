@@ -7,9 +7,9 @@ from time import sleep
 
 import zmq
 
-from paperLabelServer.config.paperLabelConfig import BadgeServerConfig
-from jobs.badgeJob import Job
-from paperLabelServer.drivers.brotherQLDriver import BadgeDriver
+from badger.server.jobs.job import Job
+from badger.server.paperLabelServer.config.paperLabelConfig import BadgeServerConfig
+from badger.server.paperLabelServer.drivers.brotherQLDriver import BrotherQLDriver
 
 context = zmq.Context()
 socket = context.socket(zmq.REP)
@@ -21,7 +21,7 @@ class NameMissingError(Exception):
 
 
 class BadgeWorker(threading.Thread):
-    def __init__(self, queue: Queue[Job], driver: BadgeDriver):
+    def __init__(self, queue: Queue[Job], driver: BrotherQLDriver):
         threading.Thread.__init__(self, name='BadgeWorker')
         self.running: bool = False
         self.queue: Queue[Job] = queue
@@ -72,7 +72,7 @@ def main():
     print(f'binding to {config.connection_string}')
     socket.bind(config.connection_string)
 
-    driver = BadgeDriver()
+    driver = BrotherQLDriver()
     driver.printer_config = config.printer
     driver.badge_config = config.badge
 

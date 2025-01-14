@@ -1,0 +1,13 @@
+[Unit]
+Description=The bader component that handles job cueueing, distributing assets and assigns jobs to printers.
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/etc/badger/scripts/startJobServer.sh
+ExecStop=/etc/badger/scripts/stopJobServer.sh
+RestartSec=5
+Restart=on-failure
+User=badger

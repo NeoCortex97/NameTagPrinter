@@ -1,5 +1,5 @@
 [project]
-name = "NameTagger2"
+name = "Badger"
 version = "0.1.0"
 description = "A system to print various kinds of Badges and labels."
 authors = [
@@ -13,7 +13,7 @@ dependencies = [
     "qrcode[pil]~=8.0",
     "python-escpos",
     "sqlmodel~=0.0.22",
-    "starlette~=0.42.0",
+    "starlette>=0.40.0",
     "pydantic~=2.10.3",
     "pyzmq~=26.2.0",
     "imutils~=0.5.4",
@@ -26,6 +26,7 @@ dependencies = [
     "python-dotenv~=1.0.1",
     "appdirs~=1.4.4",
     "annotated-types~=0.7.0",
+    "netifaces>=0.11.0",
 ]
 requires-python = ">=3.12"
 readme = "README.md"

@@ -16,7 +16,7 @@ ASSET_ROOT = PROJECT_ROOT.joinpath('assets')
 FONT_FOLDER = ASSET_ROOT.joinpath('fonts')
 LOGO_PATH = ASSET_ROOT .joinpath('images/logos')
 
-class BadgeDriver:
+class BrotherQLDriver:
     def __init__(self):
         self.PRINTER_NAME = 'Brother_QL_820NWB_USB'
         self.LABEL_HEIGHT = 696

@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from jobs.job import Job
+from badger.server.jobs.job import Job
 
 
 class JobProcessor(ABC):

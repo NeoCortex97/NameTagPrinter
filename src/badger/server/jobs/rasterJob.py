@@ -3,7 +3,7 @@ import io
 
 from PIL import Image
 
-from jobs.job import Job
+from badger.server.jobs.job import Job
 
 
 class RasterJob(Job):

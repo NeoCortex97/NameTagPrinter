@@ -2,9 +2,9 @@ import base64
 import json
 import uuid
 
-from jobs.exceptions import NoJobTypeError, NoJobDataError, NoMediaSizeError, NoMediaTypeError
-from jobs.job import JobType, Media, MediaSize, JobStatus
-from jobs.rasterJob import RasterJob
+from badger.server.jobs.exceptions import NoJobTypeError, NoJobDataError, NoMediaSizeError, NoMediaTypeError
+from badger.server.jobs.job import JobType, Media, MediaSize, JobStatus
+from badger.server.jobs.rasterJob import RasterJob
 
 
 jobs = {

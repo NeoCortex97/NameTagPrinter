@@ -8,8 +8,8 @@ from typing import Annotated
 
 from annotated_types import Ge, Gt
 
-from jobs.exceptions import InvalidJobTypeError, \
-    InvalidMediaTypeError, InvalidMediaSizeError, InvalidRotationError, InvalidPriorityError, InvalidNumberOfCopiesError
+from badger.server.jobs.exceptions import InvalidMediaSizeError, InvalidJobTypeError, InvalidMediaTypeError, \
+    InvalidRotationError, InvalidPriorityError, InvalidNumberOfCopiesError
 
 
 class JobType(Enum):
@@ -164,7 +164,10 @@ class Job(ABC):
         :return: Nothing.
         :raise: InvalidJobTypeError if the JobType has the Value INVALID.
                 Invalid jobs should never be transmitted through a socket. It is only used if the jo is not yet fully constructed.
-        :raise: InvalidMediaTypeError
+        :raise: InvalidMediaTypeError if the media type is not supported.
+        :raise: InvalidRotationError
+        :raise: InvalidPriorityError
+        :raise: InvalidNumberOfCopiesError
         """
         if self.jobType == JobType.INVALID:
             raise InvalidJobTypeError()
@@ -179,6 +182,10 @@ class Job(ABC):
             raise InvalidNumberOfCopiesError()
 
     def to_json(self) -> str:
+        """ Serializes the job into a json encoded string.
+
+        :return: string
+        """
         return json.dumps({
             'id': self.id.hex,
             'type': self.jobType.value,

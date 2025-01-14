@@ -1,8 +1,12 @@
+import configparser
 import os
 import pathlib
+import uuid
 
 import dotenv
 from appdirs import AppDirs
+
+from badger.server.config.exceptions import NotAConfigSectionError, NotASettingError
 
 
 class LabelConfig:
@@ -86,3 +90,81 @@ class BadgeServerConfig:
     @property
     def connection_string(self) -> str:
         return f'{self.transport}://{self.interface}:{self.port}'
+
+
+class PaperLabelConfig:
+    def __init__(self):
+        self.instance_id = uuid.uuid4()
+        self.config = configparser.ConfigParser()
+        self.load_default_values()
+        # Load config files in order here
+
+        # Override with environment variables here
+
+        # override with cli params here
+
+    def load_default_values(self):
+        self.config['COMMON'] = {
+            'CommandConnectionString': 'tcp://*:6061',
+            'PrinterName': 'Brother_QL_820NWB_USB',
+            'LabelType': 'DK-22251',
+            'LabelLength': 100
+        }
+        self.config['JOB_STREAM'] = {
+            'enabled': 'yes',
+            'ConnectionString': 'tcp://*:6071'
+        }
+        self.config['UPDATE_STREAM'] = {
+            'enabled': 'yes',
+            'ConnectionString': 'tcp://*:6081'
+        }
+
+    @property
+    def command_connection(self) -> str:
+        return self.config['COMMON']['CommandConnectionString']
+
+    @property
+    def job_stream_enabled(self) -> bool:
+        return self.config['JOB_STREAM'].getboolean('enabled')
+
+    @property
+    def job_steam_connection(self):
+        return self.config['JOB_STREAM']['ConnectionString']
+
+    @property
+    def update_stream_enabled(self):
+        return self.config['UPDATE_STREAM'].getboolean('enabled')
+
+    @property
+    def update_stream_connection(self):
+        return self.config['UPDATE_STREAM']['ConnectionString']
+
+    def overwrite(self, values: list[str]):
+        for item in values:
+            key, value = item.split('=')
+            section, setting = key.split('.')
+
+            if section not in self.config.sections():
+                raise NotAConfigSectionError(section)
+            if setting not in self.config[section].keys():
+                raise NotASettingError(section, setting, value)
+
+            self.config[section][setting] = value
+
+    def get(self, items: list[str]):
+        result = {}
+        for item in items:
+            section, setting = item.split('.')
+
+            if section not in self.config.sections():
+                raise NotAConfigSectionError(section)
+            if setting not in self.config[section].keys():
+                raise NotASettingError(section, setting)
+
+
+            if section not in result.keys():
+                result[section] = {}
+
+            result[section][setting] = self.config[section][setting]
+
+        return result
