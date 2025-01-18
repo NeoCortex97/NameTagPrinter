@@ -2,7 +2,7 @@ from typing import Tuple
 
 from badger.server.jobs.job import Job, JobType
 from badger.server.jobs.rasterJob import RasterJob
-from badger.server.processors.jobProcessor import JobProcessor
+from badger.server.jobs.jobProcessor import JobProcessor
 
 
 class RasterProcessor(JobProcessor):

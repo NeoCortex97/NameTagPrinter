@@ -2,9 +2,10 @@ from badger.server.jobs.job import Job, JobType
 from badger.server.jobs.jobProcessor import JobProcessor
 
 
-class ScriptProcessor(JobProcessor):
+class DummyProcessor(JobProcessor):
     def is_applicable(self, job: Job) -> bool:
-        return job.jobType == JobType.SCRIPT
+        return job.jobType == JobType.DUMMY
 
     def apply(self, job):
-        pass
+        print(f'Discarding Job: {job}')
+        return None, None

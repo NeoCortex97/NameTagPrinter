@@ -111,11 +111,11 @@ class PaperLabelConfig:
             'LabelLength': 100
         }
         self.config['JOB_STREAM'] = {
-            'enabled': 'yes',
+            'enabled': 'no',
             'ConnectionString': 'tcp://*:6071'
         }
         self.config['UPDATE_STREAM'] = {
-            'enabled': 'yes',
+            'enabled': 'no',
             'ConnectionString': 'tcp://*:6081'
         }
 

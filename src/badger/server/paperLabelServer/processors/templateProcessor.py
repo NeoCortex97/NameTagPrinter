@@ -1,5 +1,5 @@
 from badger.server.jobs.job import Job
-from badger.server.processors.jobProcessor import JobProcessor
+from badger.server.jobs.jobProcessor import JobProcessor
 
 
 class TemplateProcessor(JobProcessor):

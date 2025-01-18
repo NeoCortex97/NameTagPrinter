@@ -28,6 +28,7 @@ class JobType(Enum):
     RAW = 'raw'
     DUMMY = 'dummy'
     RASTER = 'raster'
+    SCRIPT = 'script'
     INVALID = 'invalid'
     TEMPLATE = 'template'
 
@@ -132,6 +133,9 @@ class MediaSize:
         if self.width <= 0 or self.height <= 0:
             raise InvalidMediaSizeError()
 
+    def __repr__(self):
+        return f'{self.width}x{self.height}'
+
 
 class Job(ABC):
     """ A generic representation of a print job.
@@ -196,6 +200,9 @@ class Job(ABC):
             'copies': self.copies,
             'data': base64.b64encode(self.get_data_bytes()).decode('utf-8')
         })
+
+    def __repr__(self):
+        return f'{self.id} {self.jobType} - {self.copies}x {self.media}({self.mediaSize})'
 
     @abstractmethod
     def get_data_bytes(self) -> bytes:

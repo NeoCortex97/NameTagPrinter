@@ -1,0 +1,2 @@
+class ServiceConfig:
+    pass
